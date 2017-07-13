@@ -22,7 +22,7 @@ namespace EnableUnsafeCode
 
         public static void EnableProjectUnsafeCode (string csproj_path)
         {
-            var doc =new XmlDocument();
+            var doc = new XmlDocument();
             doc.Load(csproj_path);
 
             var nodes = doc.ChildNodes;
@@ -62,7 +62,7 @@ namespace EnableUnsafeCode
                     && _IsTargetPropertyGroupNode(node)
                     && !_HasAllowUnsafeBlocksChild(node))
                 {
-                    var unsafeNode = doc.CreateElement("AllowUnsafeBlocks");
+                    var unsafeNode = doc.CreateElement("AllowUnsafeBlocks", doc.DocumentElement.NamespaceURI);
                     unsafeNode.InnerText = "true";
                     node.AppendChild(unsafeNode);
 
