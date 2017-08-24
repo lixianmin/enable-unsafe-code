@@ -5,6 +5,7 @@ author:     lixianmin
 
 Copyright (C) - All Rights Reserved
 *********************************************************************/
+#if !UNITY_2017_1_OR_NEWER
 
 using UnityEngine;
 using UnityEditor;
@@ -29,3 +30,4 @@ namespace EnableUnsafeCode
 		}
 	}
 }
+#endif
